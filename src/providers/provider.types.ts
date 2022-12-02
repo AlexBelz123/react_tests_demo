@@ -6,6 +6,7 @@ export interface ThemeContext {
 }
 
 export type Props = {
+  theme: 'light' | 'dark';
   readonly children: React.ReactNode;
 };
 

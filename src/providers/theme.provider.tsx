@@ -11,7 +11,7 @@ export class ThemeProvider extends Component<Props, State> {
 
     this.state = {
       context: {
-        theme: 'light',
+        theme: this.props.theme,
         toggleTheme: this.toggleTheme,
       },
     };
@@ -27,7 +27,6 @@ export class ThemeProvider extends Component<Props, State> {
   }
 
   render() {
-    console.log(this.state.context);
     return (
       <themeContext.Provider value={this.state.context}>
         {this.props.children}

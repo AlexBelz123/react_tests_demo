@@ -7,8 +7,10 @@ interface UseCounterOutput {
   reset: () => void;
 }
 
-function useCounter(initialValue?: number): UseCounterOutput {
-  const [count, setCount] = useState(initialValue || 0);
+function useCounter(
+  initialValue: number | (() => number) = 0
+): UseCounterOutput {
+  const [count, setCount] = useState(initialValue);
 
   const increment = () => setCount((x) => x + 1);
   const decrement = () => setCount((x) => x - 1);
